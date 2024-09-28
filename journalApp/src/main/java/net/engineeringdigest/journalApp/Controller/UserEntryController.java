@@ -9,12 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/journal")
-public class JournalEntryControllerV2 {
+@RequestMapping("/user")
+public class UserEntryController {
 
     @Autowired
     private JournalEntryService journalEntryService;
@@ -29,7 +29,6 @@ public class JournalEntryControllerV2 {
     }
 
     @PostMapping
-
     public ResponseEntity<JournalEntry> createEntry(@RequestBody JournalEntry myEntry){
     try{
             myEntry.setDate(LocalDateTime.now());
